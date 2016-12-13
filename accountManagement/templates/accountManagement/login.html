@@ -1,5 +1,44 @@
-<form action="/accountManagement/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Whole New World</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body style="text-align: center">
+
+<div class="header" style="font-family: 'Roboto', Corbel, Avenir, 'Lucida Grande', 'Lucida Sans', sans-serif; color: #0C3C26">
+    <h3 style="line-height: 1.3; font-weight: 300; font-size: 3.6rem">The Real Hacktor</h3>
+    <p style="font-weight: 400">login and enter a whole new world</p>
+</div>
+
+<div class="row" style="padding-top: 5%; display: inline-block">
+    <div class="form">
+        <form action="/accountManagement/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ loginForm.username.errors }}
+                <label for="username">Username:</label>
+                <input name="username" value="{{ username }}" type="text" class="form-control" id="username">
+            </div>
+            <div class="form-group">
+                {{ loginForm.password.errors }}
+                <label for="password">Passwort:</label>
+                <input name="password" value="{{ password }}" type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-success" style="background:mediumseagreen">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
