@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row col-sm-offset-4" style="padding-top: 10%">
+    <div class="home row col-sm-offset-4" >
         <div class="col-sm-3">
             <form action="/accountManagement/changePassword" method="post">
                 {% csrf_token %}
@@ -20,7 +20,7 @@
                     <label for="newPasswordConfirmation">Wiederholen:</label>
                     <input name="newPasswordConfirmation" value="{{ newPasswordConfirmation }}" type="password" class="form-control" id="newPasswordConfirmation">
                 </div>
-                <button type="submit" class="btn btn-success" style="background:mediumseagreen">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
             </form>
             <br>
         </div>
@@ -34,7 +34,7 @@
                     <label for="{{ emailForm.newEmail.id_for_label }}">Neue Emailadresse:</label>
                     <input name="newEmail" type="email" class="form-control" id="{{ emailForm.newEmail.id_for_label }}">
                 </div>
-                <button type="submit" class="btn btn-success" value="Submit" style="background:mediumseagreen">Submit</button>
+                <button type="submit" class="btn btn-success" value="Submit">Submit</button>
             </form>
         </div>
     </div>
