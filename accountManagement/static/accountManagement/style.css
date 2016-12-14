@@ -57,7 +57,7 @@ html, body {
     border-radius: 0
 }
 
-.loginform .btn-success {
+.btn-success {
     background: mediumseagreen;
     width: 55%;
     height: 5%;
@@ -67,7 +67,7 @@ html, body {
     margin-top: 10px;
 }
 
-.loginform .btn-success:focus {
+.btn-success:focus {
     outline: 0;
 }
 
@@ -78,6 +78,11 @@ html, body {
     padding-top: 10%
 }
 
-.home .btn-success {
-    background: mediumseagreen
+.bg {
+    background-image: url('../../static/accountManagement/images/Django-Framework-Logo.png');
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover
 }
+

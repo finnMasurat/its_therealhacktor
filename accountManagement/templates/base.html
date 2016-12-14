@@ -3,28 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>A Whole New World</title>
+
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="../static/accountManagement/style.css">
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid" style="background-color: #17633e">
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="color: #17633e">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="color: #FFFFFF">TheRealHacktorUnchained</a>
+            <h4 style="padding-top: 4%">TheRealHacktor</h4>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active" style="color: #FFFFFF"><a href="#">Home</a></li>
-            <li><a href="#" style="color: #FFFFFF">Users</a></li>
-            <li><a href="#" style="color: #FFFFFF">Groups</a></li>
-            <li><a href="https://de.wikipedia.org/wiki/Informationssicherheit" style="color: #FFFFFF">IT-Sicherheit</a>
-            <li><a href="/accountManagement/logout" style="color: #FFFFFF">Logout</a>
-            </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                {% url 'home' as home_url %}
+                {% url 'changePassword' as password_url %}
+                {% url 'changeEmail' as email_url %}
+                <li {% if request.get_full_path == home_url %}class="active"{% endif %}>
+                    <a href="/accountManagement/home" style="color: #17633e">Home</a>
+                </li>
+                <li {% if request.get_full_path == password_url %}class="active"{% endif %}>
+                    <a href="/accountManagement/changePassword" style="color: #17633e">Password ändern</a>
+                </li>
+                <li {% if request.get_full_path == email_url %}class="active"{% endif %}>
+                    <a href="/accountManagement/changeEmail" style="color: #17633e">Emailadresse ändern</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8000/admin/" style="color: #17633e">AdminPage</a>
+                </li>
+                <li>
+                    <a href="/accountManagement/logout" style="color: #17633e">Logout</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
 </nav>
 
-<div>
+<div class="bg" {% if request.get_full_path != home_url %}style="-webkit-filter: blur(6px); z-index: 0;"{% endif %}
+     style="background-image: url('../static/accountManagement/images/Django-Framework-Logo.png'); width: 100%; height: 100%; position: absolute; background-size: cover">
+</div>
+
+<div style="text-align: center">
     {% block content %}
     {% endblock %}
 </div>
