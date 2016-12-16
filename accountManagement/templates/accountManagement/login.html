@@ -21,13 +21,15 @@
             <div class="form-group has-feedback has-feedback-left">
                 {{ loginForm.username.errors }}
                 <label class="control-label sr-only" for="username"></label>
-                <input name="username" value="{{ username }}" type="text" placeholder="Username" class="form-control" id="username">
+                <input name="username" value="{{ username }}" type="text" placeholder="Username" class="form-control"
+                       id="username">
                 <i class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></i>
             </div>
             <div class="form-group has-feedback has-feedback-left">
                 {{ loginForm.password.errors }}
                 <label class="control-label sr-only" for="password"></label>
-                <input name="password" value="{{ password }}" type="password" placeholder="Passwort" class="form-control" id="password">
+                <input name="password" value="{{ password }}" type="password" placeholder="Passwort"
+                       class="form-control" id="password">
                 <i class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></i>
             </div>
             <button type="submit" class="btn btn-success">
@@ -35,6 +37,9 @@
             </button>
         </form>
     </div>
+</div>
+<div>
+    <p style="position: absolute; color: #FFFFFF; margin-bottom: 3px;margin-right: 3px; bottom: 0; right: 0;">@designed by finnmasurat</p>
 </div>
 </body>
 </html>
