@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="window" style="margin-top: 10%;">
+        <div class="form">
+            <form class="loginform" action="/accountManagement/changeEmail" method="post">
+                {% csrf_token %}
+                {{ emailForm.non_field_errors }}
+                <div class="form-group">
+                    {{ emailForm.newEmail.errors }}
+                    <label class="control-label sr-only" for="{{ emailForm.newEmail.id_for_label }}">Neue
+                        Emailadresse:</label>
+                    <input placeholder="Neue Emailadresse" name="newEmail" type="email" class="form-control"
+                           id="{{ emailForm.newEmail.id_for_label }}">
+                </div>
+                <button type="submit" class="btn btn-success" value="Submit" style="margin-bottom: 5%">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
