@@ -3,3 +3,4 @@ db.sqlite3
 apache/
 *.pyc
 static/
+hacktorenv/
