@@ -4,3 +4,5 @@ apache/
 *.pyc
 static/
 hacktorenv/
+*/__pycache__/
+
